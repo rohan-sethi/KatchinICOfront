@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+<base href="/">
+ <!-- <link href="assets/css/font-awesome.min.css" rel="stylesheet" />-->
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/crypto.css" rel="stylesheet">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="assets/css/flipclock.css" />
+<link href="assets/css/bootstrap-slider.css" rel="stylesheet">
+<link href="assets/css/login.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="assets/js/lodash.min.js"></script>
+<script src="assets/js/jquery.countdown.min.js"></script>
+<style>
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #414141;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 15px;
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+    background: #ff9400;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+.rang_number {color:#ff9400; text-align:left; float:left;}
+.rang_number_gray {color:#414141; text-align:right; float:right;}
+
+
+.container {
+  width: 500px;
+}
+
+.note {
+  color: gray;
+  margin: 8px 0;
+}
+
+input.active:valid {
+  box-shadow: 0 0 5px 1px green;
+}
+
+input.active:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+#nprogress .bar {
+  background-color: #f4590a;
+}
+ 
+#nprogress .spinner-icon {
+  border-top-color: #f4590a;
+  border-left-color: #f4590a;
+}
+ 
+#nprogress .peg {
+  box-shadow: 0 0 10px #f4590a, 0 0 5px #f4590a;
+}
+
+
+
+.coinSelectorleft, .coinSelectorright{ float: left;  margin-bottom: 30px;
+    margin-right: 42px;
+    text-align: center;}
+.coinSelectorleft img, .coinSelectorright img{ max-width: 50px; height: auto;}
+
+#cover-spin {
+    position:fixed;
+    width:100%;
+    left:0;right:0;top:0;bottom:0;
+    background-color: rgba(255,255,255,0.7);
+    z-index:9999;
+    display:none;
+}
+
+@-webkit-keyframes spin {
+	from {-webkit-transform:rotate(0deg);}
+	to {-webkit-transform:rotate(360deg);}
+}
+
+@keyframes spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+#cover-spin::after {
+    content:'';
+    display:block;
+    position:absolute;
+    left:48%;top:40%;
+    width:40px;height:40px;
+    border-style:solid;
+    border-color:black;
+    border-top-color:transparent;
+    border-width: 4px;
+    border-radius:50%;
+    -webkit-animation: spin .8s linear infinite;
+    animation: spin .8s linear infinite;
+}
+
+
+</style>
+  <body style="padding-top:0px;">
+  <!--<script src="assets/medium.js"></script>-->
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+	
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+	
+	<script src="assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
+<script type="text/javascript">
+// With JQuery
+
+/*
+$(function(){
+  FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+  var opts = {
+    clockFace: 'DailyCounter',
+    countdown: true,
+    language: 'Custom'
+  };
+  opts.classes = {
+    active: 'flip-clock-active',
+    before: 'flip-clock-before',
+    divider: 'flip-clock-divider',
+    dot: 'flip-clock-dot',
+    label: 'flip-clock-label',
+    flip: 'flip',
+    play: 'play',
+    wrapper: 'flip-clock-small-wrapper'
+  };  
+  var countdown = 1515787898 - ((new Date().getTime())/1000); // from: 01/01/2018 05:12 pm -0800
+  countdown = Math.max(1, countdown);
+  $('.clock-builder-output').FlipClock(countdown, opts);
+});
+*/
+</script>  
+
+<!--End script--++++++++++++==========---------------------->
+
+<script>
+
+</script>
+  </body>
+</html>

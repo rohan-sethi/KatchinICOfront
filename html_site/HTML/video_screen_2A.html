@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Template</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/crypto.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap-slider.css" rel="stylesheet">
+
+    <link type="text/css" rel="stylesheet" href="css/flipclock.css" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="js/jquery.countdown.min.js"></script>
+<style>
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background: #414141;
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 50px;
+    height: 15px;
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
+    background: #ff9400;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 30%;
+    background: #4CAF50;
+    cursor: pointer;
+}
+.rang_number {color:#ff9400; text-align:left; float:left;}
+.rang_number_gray {color:#414141; text-align:right; float:right;}
+</style>
+
+  </head>
+  <body>
+
+
+<div class="video_background">
+<div class="container white_bg_video">
+<div class="col-md-12 raleway video_tag" >
+<p>Worried you've missed out on the rising crypto market?</p>
+<h1 class="robotoslab">The Crypto revolution has arrived…</h1>
+<h3 class="robotoslab">and it is just beginning</h3>
+</div>
+<div class="col-md-12 vidow_frame mt20 mb50">
+<iframe width="100%" height="530" src="https://www.youtube.com/embed/kubGCSj5y3k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+</div>
+
+<div class="col-md-12 mainContent">
+<div class="VideoContentOuter">
+<div class="video-steps"><h1 class="robotoslab text-center text-uppercase text-thin main-title"><span class="text-bold">﻿﻿step 3:</span> Select how many <span class="text-bold"> DigiCrypt</span> Coins you 
+would like to purchase in the Pre-ICO </h1></div>
+<div class="frame_box">
+<p class="FrameTitle">﻿USE SLIDER TO SELECT AMOUNT YOU <span>DIGICRYPT</span> YOU WANT TO BUY</p>
+
+<div class="SliderContainer">
+   <div class="slider-outer">
+   <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+</div>
+<div class="clearfix"></div>
+<div class="MinAmount pull-left">$100.00</div>
+<div class="MaxAmount pull-right">$999.00</div>
+
+
+</div>
+<div class="customTextTitle">﻿OR MANUALLY ENTER AMOUNT BELOW:</div>
+<div class="customValue"><div class="pull-left symbol">$ </div><div class="pull-left"><input name="" placeholder="Enter Custom Amount" type="text" class="form-control"></div></div>
+<div class="clearfix"></div>
+<div class="smartMove">﻿SMART MOVE - YOU ARE BUYING <span>332 DIGICRYPT</span> COINS BEFORE THE ICO!</div>
+<div class="clearfix"></div><br><br>
+<div class="bonousSection">
+<p class=" text-center"><img src="images/free-bonous.png" class="" ><span class="text-uppercase bonous_line bonousTokens">MI -TOKENS: 10,000.00  </span></p>
+<p class="bonousCopy">﻿All participants in the Pre-ICO are getting tokens in the mining infrastructure, these are called MI-Tokens. They are issued to all participants at the Pre-ICO and ICO level. They are going to provide the initial mining infrastructure to our early adopters. However the best part is, you own a share of this, and that means as long as you own these tokens, and new DigiBit coins mined on our network, you will get your proportionate disbursement of coins for life. This is a unique opportunity to participate not only in the purchase of the most ground breaking digital currency ever, but also own a piece of the back bone that runs it. </p>
+</div>
+</div>
+
+</div>
+<div class="buttonContiner">
+<div class="btnLeft pull-left"><a href="video_screen_1.html"><img src="images/prev.jpg" width="270" height="92"></a></div>
+<div class="btnRight pull-right"><a href="3.html"><img src="images/continue.jpg" width="270" height="92"></a></div>
+</div>
+</div>
+
+</div>
+</div>
+
+
+<div class="clearfix"></div>
+
+
+
+
+        
+            
+            
+    
+
+
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.0.0/bootstrap-slider.js"></script>
+<script type="text/javascript">
+// With JQuery
+$('#ex1').slider({
+	tooltip: 'always' ,
+	min: 100 ,
+	max:999,
+	
+	formatter: function(value) {
+		var coinvalue = value*.75 ;
+		
+		return '$ ' + value + " = " + coinvalue + ' Coins ' ;
+		var buying = coinvalue;
+		
+		
+	}
+	
+});
+
+
+
+
+$(function(){
+	FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+	var opts = {
+		clockFace: 'DailyCounter',
+		countdown: true,
+		language: 'Custom'
+	};
+	opts.classes = {
+		active: 'flip-clock-active',
+		before: 'flip-clock-before',
+		divider: 'flip-clock-divider',
+		dot: 'flip-clock-dot',
+		label: 'flip-clock-label',
+		flip: 'flip',
+		play: 'play',
+		wrapper: 'flip-clock-small-wrapper'
+	};  
+	var countdown = 1515787898 - ((new Date().getTime())/1000); // from: 01/01/2018 05:12 pm -0800
+	countdown = Math.max(1, countdown);
+	$('.clock-builder-output').FlipClock(countdown, opts);
+});
+</script>  
+
+<!--End script--++++++++++++==========---------------------->
+
+<script>
+var slider = document.getElementById("myRange");
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
+</script>
+
+<!--End script--++++++++++++==========---------------------->
+
+
+  </body>
+</html>
